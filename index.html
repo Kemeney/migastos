@@ -577,7 +577,7 @@ const greet=()=>{const h=Math.floor(Date.now()/36e5),hr=new Date().getHours(),p=
 let ghr=Math.floor(Date.now()/36e5);setInterval(()=>{const n=Math.floor(Date.now()/36e5);if(n!==ghr){ghr=n;const e=document.getElementById("hi");if(e)e.textContent="Hi "+S.name+", "+greet()}},6e4);
 function render(){
   header();
-  $("#nav").innerHTML=[["year","Summary"],["cards","Wallet"],["fx","FX"],["month","Transaction"],["diary","Diary"],["convert","Exchange"],["settings","Settings"]].map(([k,l])=>`<button data-v="${k}" class="${view===k?"on":""}">${ico(k)}<span>${l}</span></button>`).join("");
+  $("#nav").innerHTML=[["year","Summary"],["cards","Wallet"],["fx","FX"],["month","Transact"],["diary","Diary"],["convert","Exchange"],["settings","Settings"]].map(([k,l])=>`<button data-v="${k}" class="${view===k?"on":""}">${ico(k)}<span>${l}</span></button>`).join("");
   const a=$("#app");
   if(view==="month"){
     const H=S.ui.hide[year+"|"+month]||[],hs=S.sections.filter(s=>H.includes(s.id)),now=new Date(),cm=year===String(now.getFullYear())?now.getMonth():-1;
